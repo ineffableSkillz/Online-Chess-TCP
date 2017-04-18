@@ -143,8 +143,14 @@ int calculate_diagonals(int currentX, int currentY, int destX, int destY) {
 				return 0;
 
 			/* If it is the user's move */
-			if(tempX == destX && tempY == destY)
+			if(tempX == destX && tempY == destY) {
+
+				for(int iter = 1; iter <= i; iter++) {
+					//If currentX/Y + i has a piece, return false [Adjust for further methods]
+				}
+
 				return 1;
+			}
 		}
 	} 
 
@@ -277,7 +283,7 @@ int calculate_horizontals(int currentX, int currentY, int destX, int destY) {
 int isLegalMove(chessPiece piece, int x, int y) {
 
 	/* TODO: 
-		- Check if pieces are in the way
+		- Check if pieces are in the way (Both friendly and enemy & !king)
 
 	*/
 
@@ -299,8 +305,14 @@ int isLegalMove(chessPiece piece, int x, int y) {
 			if((tempX == x) && (tempY == y)) {
 					 
 				/* Checking for any obstructing pieces */
-				if(i == 0) { //The double jump
+				if(i == 0) { //Two moves forward
 					 
+				} else if (i == 1) { //One move forward
+
+				} else if (i == 2) { //Right Diagonal Take
+
+				} else if (i == 3) { //Left Diagonal Take
+
 				}
 				return 1;
 			}
@@ -319,7 +331,7 @@ int isLegalMove(chessPiece piece, int x, int y) {
 			tempX = currentX + piece.xMoves[i]; 
 			tempY = currentY + piece.yMoves[i];
 
-			if((tempX == x) && (tempY == y)) {
+			if((tempX == x) && (tempY == y)) { /* TO DO: Add condition to check that the piece at that location is different colour and !king */
 				return 1;
 			}
 		}		
