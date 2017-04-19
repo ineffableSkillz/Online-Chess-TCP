@@ -30,6 +30,9 @@ chessPiece new_pawn(int x, int y, colour allegiance) {
 	/* Setting hasMoved */
 	tempPiece->hasMoved = 0;
 
+	/* Setting Colour */
+	tempPiece->allegiance = allegiance;
+
 	return *tempPiece;
 }
 
@@ -56,6 +59,9 @@ chessPiece new_knight(int x, int y, colour allegiance) {
 	tempPiece->yMoves[2] = 2;
 	tempPiece->yMoves[3] = -2;
 
+	/* Setting Colour */
+	tempPiece->allegiance = allegiance;
+
 	return *tempPiece;
 }
 
@@ -70,6 +76,9 @@ chessPiece new_rook(int x, int y, colour allegiance) {
 
 	/* Setting Piece Type */
 	tempPiece->type = ROOK;
+
+	/* Setting Colour */
+	tempPiece->allegiance = allegiance;
 
 	return *tempPiece;
 }
@@ -86,6 +95,9 @@ chessPiece new_bishop(int x, int y, colour allegiance) {
 	/* Setting Piece Type */
 	tempPiece->type = BISHOP;
 
+	/* Setting Colour */
+	tempPiece->allegiance = allegiance;
+
 	return *tempPiece;
 }
 
@@ -100,6 +112,9 @@ chessPiece new_queen(int x, int y, colour allegiance) {
 
 	/* Setting Piece Type */
 	tempPiece->type = QUEEN;
+
+	/* Setting Colour */
+	tempPiece->allegiance = allegiance;
 
 	return *tempPiece;
 }
@@ -122,6 +137,9 @@ chessPiece new_king(int x, int y, colour allegiance) {
 	/* Setting isInCheck */
 	tempPiece->isInCheck = 0;
 
+	/* Setting Colour */
+	tempPiece->allegiance = allegiance;
+	
 	return *tempPiece;
 }
 
