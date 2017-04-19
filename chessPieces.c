@@ -4,7 +4,7 @@ int main() {
 
 }
 
-chessPiece new_pawn(int x, int y) {
+chessPiece new_pawn(int x, int y, colour allegiance) {
 
 	chessPiece* tempPiece; //Pointer to a new piece struct
 	tempPiece = malloc(sizeof(chessPiece)); //Dynamic memory allocation
@@ -33,7 +33,7 @@ chessPiece new_pawn(int x, int y) {
 	return *tempPiece;
 }
 
-chessPiece new_knight(int x, int y) {
+chessPiece new_knight(int x, int y, colour allegiance) {
 
 	chessPiece* tempPiece; //Pointer to a new piece struct
 	tempPiece = malloc(sizeof(chessPiece)); //Dynamic memory allocation
@@ -59,7 +59,7 @@ chessPiece new_knight(int x, int y) {
 	return *tempPiece;
 }
 
-chessPiece new_rook(int x, int y) {
+chessPiece new_rook(int x, int y, colour allegiance) {
 
 	chessPiece* tempPiece; //Pointer to a new piece struct
 	tempPiece = malloc(sizeof(chessPiece)); //Dynamic memory allocation
@@ -74,7 +74,7 @@ chessPiece new_rook(int x, int y) {
 	return *tempPiece;
 }
 
-chessPiece new_bishop(int x, int y) {
+chessPiece new_bishop(int x, int y, colour allegiance) {
 
 	chessPiece* tempPiece; //Pointer to a new piece struct
 	tempPiece = malloc(sizeof(chessPiece)); //Dynamic memory allocation
@@ -89,7 +89,7 @@ chessPiece new_bishop(int x, int y) {
 	return *tempPiece;
 }
 
-chessPiece new_queen(int x, int y) {
+chessPiece new_queen(int x, int y, colour allegiance) {
 
 	chessPiece* tempPiece; //Pointer to a new piece struct
 	tempPiece = malloc(sizeof(chessPiece)); //Dynamic memory allocation
@@ -104,7 +104,7 @@ chessPiece new_queen(int x, int y) {
 	return *tempPiece;
 }
 
-chessPiece new_king(int x, int y) {
+chessPiece new_king(int x, int y, colour allegiance) {
 
 	chessPiece* tempPiece; //Pointer to a new piece struct
 	tempPiece = malloc(sizeof(chessPiece)); //Dynamic memory allocation
