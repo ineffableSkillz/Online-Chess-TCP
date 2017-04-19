@@ -32,17 +32,17 @@ struct piece {
 };
 typedef struct piece chessPiece;
 
-chessPiece new_pawn(int x, int y, colour allegiance);
+chessPiece *new_pawn(int x, int y, colour allegiance);
 
-chessPiece new_knight(int x, int y, colour allegiance);
+chessPiece *new_knight(int x, int y, colour allegiance);
 
-chessPiece new_rook(int x, int y, colour allegiance);
+chessPiece *new_rook(int x, int y, colour allegiance);
 
-chessPiece new_bishop(int x, int y, colour allegiance);
+chessPiece *new_bishop(int x, int y, colour allegiance);
 
-chessPiece new_queen(int x, int y, colour allegiance);
+chessPiece *new_queen(int x, int y, colour allegiance);
 
-chessPiece new_king(int x, int y, colour allegiance); 	
+chessPiece *new_king(int x, int y, colour allegiance); 	
 
 /* int x, int y - Chosen place to move to */
 /* int x, int y - Are checked to be valid bored move */
