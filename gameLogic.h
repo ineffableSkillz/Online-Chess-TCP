@@ -8,6 +8,12 @@
 
 typedef enum turn {WHITE, BLACK} turn;
 
+struct chessPiecePlace {
+
+	int isFree;
+	chessPiece *piece;
+};
+
 struct board {
 
 	turn playerColour;
