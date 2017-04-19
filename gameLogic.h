@@ -12,19 +12,20 @@ struct chessPiecePlace {
 
 	int isFree;
 	chessPiece *piece;
-};
+}; 
+typedef struct chessPiecePlace;
 
 struct board {
 
 	turn playerColour;
 
-	chessPiece *tiles;
+	chessPiecePlace *tiles;
 	
 	turn playerTurn;
 
 	int isWhiteInCheck;
 	int isBlackInCheck;
-};
+}; 
 typedef struct board board;
 
 void board_setup(board *table);
