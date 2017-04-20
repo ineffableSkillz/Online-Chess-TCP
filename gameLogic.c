@@ -1,10 +1,15 @@
 #include "gameLogic.h"
+#include "chessPieces.h"
+
+#include <stdio.h>
 
 int main() {
 
 	board chessTable;
 	board_setup(&chessTable, 1);
 
+	puts("hi");
+	printf("%u",chessTable.tiles[get_array_position(0,0)].piece->type); //Works, need an enum translation method
 }
 
 int get_array_position(unsigned row, unsigned col) {
@@ -60,12 +65,23 @@ void board_setup(board *table, int isWhite) {
 	/* Adding Kings */
 	place_piece(table, new_king(0, 4, WHITE), 0, 4);
 	place_piece(table, new_king(7, 4, BLACK), 7, 4);
-
 }
 
 void place_piece(board *table, chessPiece *piece, int row, int column) {
 
-	table->tiles[get_array_position]
+	chessPiecePlace *tile = &table->tiles[get_array_position(row, column)];
+
+	/* If there's not a piece on the tile */
+	if(tile->isFree) {
+
+		tile->piece = malloc(sizeof(chessPiece));
+		tile->piece = piece;
+	
+	} else { 
+	
+		/* To be done */
+
+	}
 }
 
 chessPiecePlace new_chess_piece_place() {

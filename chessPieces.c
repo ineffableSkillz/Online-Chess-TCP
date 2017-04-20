@@ -1,8 +1,6 @@
 #include "chessPieces.h"
 
-int main() {
 
-}
 
 chessPiece *new_pawn(int x, int y, colour allegiance) {
 
@@ -33,7 +31,7 @@ chessPiece *new_pawn(int x, int y, colour allegiance) {
 	/* Setting Colour */
 	tempPiece->allegiance = allegiance;
 
-	return &tempPiece;
+	return tempPiece;
 }
 
 chessPiece *new_knight(int x, int y, colour allegiance) {
@@ -62,7 +60,7 @@ chessPiece *new_knight(int x, int y, colour allegiance) {
 	/* Setting Colour */
 	tempPiece->allegiance = allegiance;
 
-	return &tempPiece;
+	return tempPiece;
 }
 
 chessPiece *new_rook(int x, int y, colour allegiance) {
@@ -80,7 +78,7 @@ chessPiece *new_rook(int x, int y, colour allegiance) {
 	/* Setting Colour */
 	tempPiece->allegiance = allegiance;
 
-	return &tempPiece;
+	return tempPiece;
 }
 
 chessPiece *new_bishop(int x, int y, colour allegiance) {
@@ -98,7 +96,7 @@ chessPiece *new_bishop(int x, int y, colour allegiance) {
 	/* Setting Colour */
 	tempPiece->allegiance = allegiance;
 
-	return &tempPiece;
+	return tempPiece;
 }
 
 chessPiece *new_queen(int x, int y, colour allegiance) {
@@ -116,7 +114,7 @@ chessPiece *new_queen(int x, int y, colour allegiance) {
 	/* Setting Colour */
 	tempPiece->allegiance = allegiance;
 
-	return &tempPiece;
+	return tempPiece;
 }
 
 chessPiece *new_king(int x, int y, colour allegiance) {
@@ -140,7 +138,7 @@ chessPiece *new_king(int x, int y, colour allegiance) {
 	/* Setting Colour */
 	tempPiece->allegiance = allegiance;
 	
-	return &tempPiece;
+	return tempPiece;
 }
 
 int calculate_diagonals(int currentX, int currentY, int destX, int destY) {
