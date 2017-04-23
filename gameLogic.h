@@ -28,17 +28,23 @@ struct board {
 }; 
 typedef struct board board;
 
+
 void board_setup(board *table, int isWhite);
 
 void update_king_status(chessPiece *king);
 
 void place_piece(board *table, chessPiece *piece, int row, int column);
 
+
 int is_my_turn(colour playerTurn);
+
+int get_array_position(unsigned row, unsigned col);
 
 int is_king_in_check(chessPiece *king);
 
 int get_array_position(unsigned row, unsigned col);
+
+int is_there_a_piece(board table, unsigned row, unsigned col);
 
 chessPiecePlace new_chess_piece_place();
 

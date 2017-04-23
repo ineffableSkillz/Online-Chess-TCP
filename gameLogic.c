@@ -95,3 +95,13 @@ chessPiecePlace new_chess_piece_place() {
 
 	return *temp;
 }
+
+
+int is_there_a_piece(board table, unsigned row, unsigned col) {
+
+	chessPiecePlace tile = table.tiles[get_array_position(row, col)];
+
+	return !tile.isFree;
+
+
+}
