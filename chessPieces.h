@@ -44,6 +44,10 @@ chessPiece *new_queen(int x, int y, colour allegiance);
 
 chessPiece *new_king(int x, int y, colour allegiance); 	
 
+char *get_piece_type(chessPiece piece); 
+
+char *get_piece_colour(chessPiece piece);
+
 /* int x, int y - Chosen place to move to */
 /* int x, int y - Are checked to be valid bored move */
 int isLegalMove(chessPiece piece, int x, int y); //Passing byVal as not changing any information

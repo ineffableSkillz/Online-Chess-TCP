@@ -8,8 +8,11 @@ int main() {
 	board chessTable;
 	board_setup(&chessTable, 1);
 
+	chessPiece *p = chessTable.tiles[get_array_position(0,0)].piece;
+
+	printf("%s, %s, %i\n",get_piece_type(*p), get_piece_colour(*p), is_there_a_piece(chessTable, 0, 0)); //Works, need an enum translation method
+	
 	puts("hi");
-	printf("%u",chessTable.tiles[get_array_position(0,0)].piece->type); //Works, need an enum translation method
 }
 
 int get_array_position(unsigned row, unsigned col) {
@@ -76,6 +79,9 @@ void place_piece(board *table, chessPiece *piece, int row, int column) {
 
 		tile->piece = malloc(sizeof(chessPiece));
 		tile->piece = piece;
+
+		/* Change is free status */ 
+		tile->isFree = !tile->isFree; 
 	
 	} else { 
 	

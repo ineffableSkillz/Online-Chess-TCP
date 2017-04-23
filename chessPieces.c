@@ -1,7 +1,5 @@
 #include "chessPieces.h"
 
-
-
 chessPiece *new_pawn(int x, int y, colour allegiance) {
 
 	chessPiece* tempPiece; //Pointer to a new piece struct
@@ -367,4 +365,47 @@ int isLegalMove(chessPiece piece, int x, int y) {
 	}
 
 	return 0;
+}
+
+char *get_piece_type(chessPiece piece) {
+
+	int type = piece.type;
+
+	switch(type) {
+
+		case 4:
+			return "PAWN";
+			break;
+
+		case 5:
+			return "KNIGHT";
+			break;
+
+		case 2:
+			return "BISHOP";
+			break;
+
+		case 3:
+			return "ROOK";
+			break;
+		
+		case 1:
+			return "QUEEN";
+			break;
+		
+		case 0:
+			return "KING";
+			break;
+
+		default:
+			return "NOTHING";
+
+	}
+}
+
+char *get_piece_colour(chessPiece piece) {
+
+	int colour = piece.allegiance;
+
+	return colour == 0? "WHITE" : "BLACK";
 }
