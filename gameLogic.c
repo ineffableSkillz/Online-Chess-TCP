@@ -10,7 +10,7 @@ int main() {
 
 	chessPiece *p = chessTable.tiles[get_array_position(0,0)].piece;
 
-	printf("%s, %s, %i\n",get_piece_type(*p), get_piece_colour(*p), is_there_a_piece(chessTable, 0, 0)); //Works, need an enum translation method
+	printf("%s, %s, %i, %i\n",get_piece_type(*p), get_piece_colour(*p), is_there_a_piece(chessTable, 0, 0), is_ally_piece(chessTable, 7,7)); //Works, need an enum translation method
 	
 	puts("hi");
 }
@@ -102,12 +102,18 @@ chessPiecePlace new_chess_piece_place() {
 	return *temp;
 }
 
-
 int is_there_a_piece(board table, unsigned row, unsigned col) {
 
 	chessPiecePlace tile = table.tiles[get_array_position(row, col)];
 
 	return !tile.isFree;
+}
 
+int is_ally_piece(board table, unsigned row, unsigned col) {
 
+	chessPiecePlace tile = table.tiles[get_array_position(row, col)];
+
+	chessPiece piece = *tile.piece;
+
+	return (table.playerColour == piece.allegiance);
 }

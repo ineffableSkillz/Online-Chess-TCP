@@ -46,6 +46,9 @@ int get_array_position(unsigned row, unsigned col);
 
 int is_there_a_piece(board table, unsigned row, unsigned col);
 
+/* Only run when is_there_a_piece returns 1 */
+int is_ally_piece(board table, unsigned row, unsigned col);
+
 chessPiecePlace new_chess_piece_place();
 
 #endif
