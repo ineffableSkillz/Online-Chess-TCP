@@ -28,7 +28,6 @@ struct piece {
 
 	/* Is piece in check - Only for king */
 	int isInCheck;
-
 };
 typedef struct piece chessPiece;
 
@@ -50,7 +49,7 @@ char *get_piece_colour(chessPiece piece);
 
 /* int x, int y - Chosen place to move to */
 /* int x, int y - Are checked to be valid bored move */
-int isLegalMove(chessPiece piece, int x, int y); //Passing byVal as not changing any information
+int isLegalMove(chessPiece *piece, int x, int y); //Passing byVal as not changing any information
 
 /* int x, int y - Goal */
 int calculate_diagonals(int currentX, int currentY, int x, int y);

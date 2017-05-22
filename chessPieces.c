@@ -294,27 +294,27 @@ int calculate_horizontals(int currentX, int currentY, int destX, int destY) {
 	return 0;
 }
 
-int isLegalMove(chessPiece piece, int x, int y) {
+int isLegalMove(board *table, chessPiece *piece, int x, int y) {
 
 	/* TODO: 
 		- Check if pieces are in the way (Both friendly and enemy & !king)
 
 	*/
 
-	if(piece.type == PAWN) {
+	if(piece->type == PAWN) {
 
-		int currentX = piece.xPos;
-		int currentY = piece.yPos;
+		int currentX = piece->xPos;
+		int currentY = piece->yPos;
 		int tempX, tempY;
 		int i;
 
-		i = (piece.hasMoved == 0)? 0 : 1;
+		i = (piece->hasMoved == 0)? 0 : 1;
 		
 		/* Checks all possible legal moves */
 		for(i; i < 4; i++) {
 			
-			tempX = currentX + piece.xMoves[i]; 
-			tempY = currentY + piece.yMoves[i];
+			tempX = currentX + piece->xMoves[i]; 
+			tempY = currentY + piece->yMoves[i];
 
 			if((tempX == x) && (tempY == y)) {
 					 
@@ -328,39 +328,41 @@ int isLegalMove(chessPiece piece, int x, int y) {
 				} else if (i == 3) { //Left Diagonal Take
 
 				}
+
+				piece->hasMoved = 1;
 				return 1;
 			}
 		
 		}
 	
-	} else if (piece.type == KNIGHT) {
+	} else if (piece->type == KNIGHT) {
 
-		int currentX = piece.xPos;
-		int currentY = piece.yPos;
+		int currentX = piece->xPos;
+		int currentY = piece->yPos;
 		int tempX, tempY;
 		int i = 0;
 		
 		for(i; i < 4; i++) {
 
-			tempX = currentX + piece.xMoves[i]; 
-			tempY = currentY + piece.yMoves[i];
+			tempX = currentX + piece->xMoves[i]; 
+			tempY = currentY + piece->yMoves[i];
 
 			if((tempX == x) && (tempY == y)) { /* TO DO: Add condition to check that the piece at that location is different colour and !king */
 				return 1;
 			}
 		}		
 	
-	} else if (piece.type == BISHOP) {
+	} else if (piece->type == BISHOP) {
 	
-		return calculate_diagonals(piece.xPos, piece.yPos, x, y);
+		return calculate_diagonals(piece->xPos, piece->yPos, x, y);
 	
-	} else if (piece.type == QUEEN) {
+	} else if (piece->type == QUEEN) {
 
-		return (calculate_diagonals(piece.xPos, piece.yPos, x, y) == 1)? 1 : calculate_horizontals(piece.xPos, piece.yPos, x, y);
+		return (calculate_diagonals(piece->xPos, piece->yPos, x, y) == 1)? 1 : calculate_horizontals(piece->xPos, piece->yPos, x, y);
 	
-	} else if (piece.type == ROOK) {
+	} else if (piece->type == ROOK) {
 
-		return calculate_horizontals(piece.xPos, piece.yPos, x, y);
+		return calculate_horizontals(piece->xPos, piece->yPos, x, y);
 
 	}
 
